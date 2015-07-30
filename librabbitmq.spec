@@ -10,7 +10,7 @@
 Name:      librabbitmq
 Summary:   Client library for AMQP
 Version:   0.5.2
-Release:   1%{?dist}
+Release:   2%{?dist}
 License:   MIT
 Group:     System Environment/Libraries
 URL:       https://github.com/alanxz/rabbitmq-c
@@ -43,7 +43,7 @@ for %{name}.
 %package tools
 Summary:    Example tools built using the librabbitmq package
 Group:      Development/Libraries
-Requires:   %{name}%{?_isa} = %{version}
+Requires:   %{name}%{?_isa} = %{version}-%{release}
 
 %description tools
 This package contains example tools built using %{name}.
@@ -117,6 +117,9 @@ make check
 
 
 %changelog
+* Thu Jul 30 2015 Lon Hohberger <lon@redhat.com> - 0.5.2-2
+- Require fully-versiond libaries for tools subpackage
+
 * Mon Sep 15 2014 Remi Collet <remi@fedoraproject.org> - 0.5.2-1
 - update to 0.5.2
 
